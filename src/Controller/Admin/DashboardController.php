@@ -2,6 +2,9 @@
 
 namespace App\Controller\Admin;
 
+use App\Entity\Category;
+use App\Entity\Dish;
+use App\Entity\Menu;
 use App\Entity\Photo;
 use App\Entity\User;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Dashboard;
@@ -30,6 +33,11 @@ class DashboardController extends AbstractDashboardController
     {
         return [
             MenuItem::linkToRoute('Retour au site', 'fa-solid fa-house', 'app_home'),
+
+            MenuItem::section('Plâts et menus'),
+            MenuItem::linkToCrud('Catégories', 'fa-solid fa-tag', Category::class),
+            MenuItem::linkToCrud('Plâts', 'fa-solid fa-fish', Dish::class),
+            MenuItem::linkToCrud('Menus', 'fa-solid fa-plate-wheat', Menu::class),
 
             MenuItem::section('Clients'),
             MenuItem::linkToCrud('Liste client', 'fa-solid fa-user', User::class),

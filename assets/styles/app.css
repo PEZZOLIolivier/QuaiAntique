@@ -82,3 +82,7 @@ img:hover + .photo-title {
 .border {
     border-color: #720000 !important;
 }
+
+li {
+    list-style:none;
+}

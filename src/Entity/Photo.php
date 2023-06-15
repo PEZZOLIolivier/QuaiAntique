@@ -34,6 +34,18 @@ class Photo
     #[ORM\Column]
     private ?\DateTimeImmutable $createdAt = null;
 
+    #[ORM\OneToMany(mappedBy: 'photo', targetEntity: Dish::class)]
+    private Collection $dishes;
+
+    #[ORM\OneToMany(mappedBy: 'photo', targetEntity: Menu::class)]
+    private Collection $menus;
+
+    public function __construct()
+    {
+        $this->dishes = new ArrayCollection();
+        $this->menus = new ArrayCollection();
+    }
+
     public function getId(): ?int
     {
         return $this->id;
@@ -99,5 +111,70 @@ class Photo
         $this->createdAt = $createdAt;
 
         return $this;
+    }
+
+    /**
+     * @return Collection<int, Dish>
+     */
+    public function getDishes(): Collection
+    {
+        return $this->dishes;
+    }
+
+    public function addDish(Dish $dish): static
+    {
+        if (!$this->dishes->contains($dish)) {
+            $this->dishes->add($dish);
+            $dish->setPhoto($this);
+        }
+
+        return $this;
+    }
+
+    public function removeDish(Dish $dish): static
+    {
+        if ($this->dishes->removeElement($dish)) {
+            // set the owning side to null (unless already changed)
+            if ($dish->getPhoto() === $this) {
+                $dish->setPhoto(null);
+            }
+        }
+
+        return $this;
+    }
+
+    /**
+     * @return Collection<int, Menu>
+     */
+    public function getMenus(): Collection
+    {
+        return $this->menus;
+    }
+
+    public function addMenu(Menu $menu): static
+    {
+        if (!$this->menus->contains($menu)) {
+            $this->menus->add($menu);
+            $menu->setPhoto($this);
+        }
+
+        return $this;
+    }
+
+    public function removeMenu(Menu $menu): static
+    {
+        if ($this->menus->removeElement($menu)) {
+            // set the owning side to null (unless already changed)
+            if ($menu->getPhoto() === $this) {
+                $menu->setPhoto(null);
+            }
+        }
+
+        return $this;
+    }
+
+    public function __toString(): string
+    {
+        return $this->title;
     }
 }
