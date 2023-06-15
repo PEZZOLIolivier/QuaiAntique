@@ -1,3 +1,84 @@
+/* Global */
 body {
-    background-color: lightgray;
+    background-color: antiquewhite;
+    color: #720000;
+    font-family: 'Libre Baskerville', serif;
+}
+
+h1, h2, h3, h4, h5 {
+    font-family: 'Pacifico', cursive;
+}
+
+.container-button {
+    background-color: #720000;
+    color: antiquewhite;
+}
+
+.container-button:hover {
+    background-color: antiquewhite;
+    color: #720000;
+    border-color: #720000;
+}
+
+/* Header & footer*/
+.menu, .footer, .footer>h2, #tableOpenHours {
+    background-color: #720000;
+    color: antiquewhite;
+}
+
+.btn-outline-light {
+    color: antiquewhite;
+    border-color: antiquewhite;
+}
+
+.btn-outline-light:hover {
+    color: #720000;
+    border-color: #720000;
+    background-color: antiquewhite;
+}
+
+footer {
+    position: sticky;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+@media (max-width: 544px) {
+    #tableOpenHours {
+        font-size: 10px;
+    }
+}
+
+/* Page Home */
+.photo p {
+    visibility: hidden;
+    background-color: white;
+    width: auto;
+    color: #720000;
+}
+
+.photo:hover {
+    transition: transform .4s;
+    transform:scale(1.03);
+    text-decoration-color: #720000;
+    text-decoration-thickness: unset;
+}
+
+img:hover + .photo-title {
+    visibility: visible;
+    cursor: default;
+    -webkit-transform: translateY(-150px);
+}
+
+/* Page Card & Menus */
+
+.table {
+    color: #720000;
+    border-color: #720000;
+    font-family: 'Libre Baskerville', serif;
+}
+
+.border {
+    border-color: #720000 !important;
 }

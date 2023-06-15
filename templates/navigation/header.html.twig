@@ -1,0 +1,37 @@
+{%  block header %}
+    <div class="menu d-block rounded-bottom">
+        <nav class="navbar navbar-dark navbar-expand-lg sticky-top px-md-0 shadow-sm">
+            <div class="container">
+                <img class="img-fluid rounded-3 navbar-brand px-md-0 mx-md-0 col-4" src="{{ asset('pictures/elements/Logo-quai-antique.png' ) }}"/>
+                <button class="navbar-toggler text-white" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon text-white"></span>
+                </button>
+                <div class=" collapse navbar-collapse" id="navbarNavDropdown">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <a class="btn btn-outline-light m-1 d-grid gap-2" href=" {{ path('app_home') }} " role="button">Accueil</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="btn btn-outline-light m-1 d-grid gap-2" href=" # " role="button">Carte & Menus</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="btn btn-outline-light m-1 d-grid gap-2" href=" # " role="button">Réservation</a>
+                        </li>
+                    </ul>
+                    <ul class="navbar-nav ms-auto d-block">
+                        {% if is_granted('ROLE_USER') %}
+                            <a class="btn btn-outline-light m-1 d-grid gap-2" href=" # " role="button">Compte</a>
+                            <a class="btn btn-outline-light m-1 d-grid gap-2" href=" {{ path('app_logout') }} " role="button">Déconnexion</a>
+                        {% else %}
+                            <a class="btn btn-outline-light m-1 d-grid gap-2" href=" {{ path('app_register') }} " role="button">S'enregistrer</a>
+                            <a class="btn btn-outline-light m-1 d-grid gap-2" href=" {{ path('app_login') }} " role="button">Connexion</a>
+                        {% endif %}
+                        {% if is_granted('ROLE_ADMIN') %}
+                            <a class="btn btn-outline-light m-1 d-grid gap-2" href=" {{ path('admin') }} " role="button">Administration</a>
+                        {% endif %}
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </div>
+{% endblock header %}

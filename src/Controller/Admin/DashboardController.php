@@ -2,6 +2,7 @@
 
 namespace App\Controller\Admin;
 
+use App\Entity\Photo;
 use App\Entity\User;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Dashboard;
 use EasyCorp\Bundle\EasyAdminBundle\Config\MenuItem;
@@ -33,6 +34,11 @@ class DashboardController extends AbstractDashboardController
             MenuItem::section('Clients'),
             MenuItem::linkToCrud('Liste client', 'fa-solid fa-user', User::class),
             MenuItem::linkToCrud('Ajouter', 'fa-solid fa-plus', User::class)
+                ->setAction('new'),
+
+            MenuItem::section('Photos'),
+            MenuItem::linkToCrud('Liste', 'fa fa-picture-o', Photo::class),
+            MenuItem::linkToCrud('Ajouter', 'fa fa-plus', Photo::class)
                 ->setAction('new'),
         ];
     }

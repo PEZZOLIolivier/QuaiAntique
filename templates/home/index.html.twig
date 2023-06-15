@@ -1,20 +1,30 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello HomeController!{% endblock %}
+{% block title %}Bienvenue au Quai Antique{% endblock %}
 
 {% block body %}
-<style>
-    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
-    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
-</style>
+    <h2 class="text-center py-3 mb-3 text-capitalize text-decoration-underline display-1"> Nos plâts les plus prisés</h2>
+    <div class="row text-center text-lg-start">
+        {% for photo in photos %}
+            {% if photo.isPublish == true %}
+                <div class="photo text-center col-sm-12 col-md-6 col-lg-4">
+                    <img class="img-fluid shadow-sm border rounded-3"
+                         id="home-picture"
+                         src="{{ asset('pictures/photos/' ~ photo.picture ) }}"
+                         alt="{{ photo.title }}"
+                         data-src="{{ asset('pictures/photos/' ~ photo.picture ) }}"
+                         data-toggle="lightbox"
+                    >
+                    <p class="photo-title badge">{{ photo.title }}</p>
+                </div>
+            {% endif %}
+        {% endfor %}
+    </div>
+    <div class="row">
+        <div class="text-center col">
+            <a class="container-button col-6 btn btn-outline m-1 mb-3 hover" href="#" role="button">Réservez dès maintenant !</a>
+        </div>
+    </div>
 
-<div class="example-wrapper">
-    <h1>Hello {{ controller_name }}! ✅</h1>
 
-    This friendly message is coming from:
-    <ul>
-        <li>Your controller at <code><a href="{{ '/home/olivier/Bureau/ECF/QuaiAntique/src/Controller/HomeController.php'|file_link(0) }}">src/Controller/HomeController.php</a></code></li>
-        <li>Your template at <code><a href="{{ '/home/olivier/Bureau/ECF/QuaiAntique/templates/home/index.html.twig'|file_link(0) }}">templates/home/index.html.twig</a></code></li>
-    </ul>
-</div>
 {% endblock %}
