@@ -1,0 +1,53 @@
+<footer class="footer rounded-top row w-100 g-0 p-2">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-9 col-12">
+                <h2 class="col text-center mb-2 d-">Nos Horraires</h2>
+                <table class="table-responsive-md table table-sm w-100" id="tableOpenHours">
+                    <thead>
+                        <tr>
+                            <th class="col-3"></th>
+                            <th class="col-3 text-center">Midi</th>
+                            <th class="col-3 text-center">Soir</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    {%  for hour in hours %}
+                        {%  if hour.isDayCLosed == true %}
+                            <tr>
+                                <td><b>{{ hour.day }}</b></td>
+                                <td colspan="2" class="text-center"><b>Fermé pour la journée</b></td>
+                            </tr>
+                        {% elseif hour.isLunchClosed == true %}
+                            <tr>
+                                <td><b>{{ hour.day}}</b></td>
+                                <td class="text-center"><b>Fermé</b></td>
+                                <td class="text-center">{{ hour.eveningStart | date('H:i')}} à {{ hour.eveningEnd | date('H:i')}}</td>
+                            </tr>
+                        {% elseif hour.isEveningClosed == true %}
+                            <tr>
+                                <td><b>{{ hour.day }}</b></td>
+                                <td class="text-center">{{ hour.lunchStart | date('H:i')}} à {{ hour.lunchEnd | date('H:i')}}</td>
+                                <td class="text-center"><b>Fermé</b></td>
+                            </tr>
+                        {%  else %}
+                            <tr>
+                                <td><b>{{ hour.day }}</b></td>
+                                <td class="text-center">{{ hour.lunchStart | date('H:i')}} à {{ hour.lunchEnd | date('H:i')}}</td>
+                                <td class="text-center"><b>{{ hour.eveningStart | date('H:i')}} à {{ hour.eveningEnd | date('H:i')}}</b></td>
+                            </tr>
+                        {% endif %}
+                    {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+            <div class="col-12 col-sm-3">
+                <h2 class="col text-center mb-2 d-">Nous Contacter</h2>
+                <div class="text-center">Restaurant le Quai Antique</div>
+                <div class="text-center">2 Places du château</div>
+                <div class="text-center">73000 CHAMBERY</div>
+                <div class="text-center">Tel: 00 00 00 00 00</div>
+            </div>
+        </div>
+    </div>
+</footer>

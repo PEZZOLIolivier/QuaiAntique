@@ -22,7 +22,7 @@
     </head>
     <body class="container-xl min-vh-100">
         {%  block header %} {%  include 'navigation/header.html.twig' %} {% endblock header %}
-
         <main class="bg-white shadow-sm mx-auto my-3 py-3 px-2 rounded-3 justify-content-center row">{% block body %}{% endblock %}</main>
+        <div class="w-100">{{ render(path('app_hours')) }}</div>
     </body>
 </html>

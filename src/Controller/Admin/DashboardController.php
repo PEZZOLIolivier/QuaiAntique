@@ -5,6 +5,7 @@ namespace App\Controller\Admin;
 use App\Entity\Category;
 use App\Entity\Dish;
 use App\Entity\Menu;
+use App\Entity\OpeningHours;
 use App\Entity\Photo;
 use App\Entity\User;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Dashboard;
@@ -33,6 +34,9 @@ class DashboardController extends AbstractDashboardController
     {
         return [
             MenuItem::linkToRoute('Retour au site', 'fa-solid fa-house', 'app_home'),
+
+            MenuItem::section('Horaires & Réservations'),
+            MenuItem::linkToCrud('Horaires', 'fa-solid fa-clock', OpeningHours::class),
 
             MenuItem::section('Plâts et menus'),
             MenuItem::linkToCrud('Catégories', 'fa-solid fa-tag', Category::class),
