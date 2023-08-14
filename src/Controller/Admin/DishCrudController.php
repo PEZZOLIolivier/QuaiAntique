@@ -7,9 +7,11 @@ use EasyCorp\Bundle\EasyAdminBundle\Config\Crud;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractCrudController;
 use EasyCorp\Bundle\EasyAdminBundle\Field\AssociationField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\BooleanField;
+use EasyCorp\Bundle\EasyAdminBundle\Field\ImageField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\MoneyField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextField;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Filters;
+use Vich\UploaderBundle\Form\Type\VichImageType;
 
 class DishCrudController extends AbstractCrudController
 {
@@ -24,12 +26,13 @@ class DishCrudController extends AbstractCrudController
             AssociationField::new('category', label: 'Catégorie'),
             TextField::new('name',label: 'Nom du plât'),
             TextField::new('description',label: 'Déscription'),
-            MoneyField::new('price')
+            MoneyField::new('price', 'prix')
                 ->setCurrency('EUR'),
             AssociationField::new('photo', label: 'Photos')
                 ->hideOnIndex(),
             BooleanField::new('isPublish', label: 'Publié'),
         ];
+
     }
 
     public function configureFilters(Filters $filters): Filters

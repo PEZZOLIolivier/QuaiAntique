@@ -15,24 +15,24 @@
                     {%  for hour in hours %}
                         {%  if hour.isDayCLosed == true %}
                             <tr>
-                                <td><b>{{ hour.day }}</b></td>
+                                <td><b >{{ hour.day.value }}</b></td>
                                 <td colspan="2" class="text-center"><b>Fermé pour la journée</b></td>
                             </tr>
                         {% elseif hour.isLunchClosed == true %}
                             <tr>
-                                <td><b>{{ hour.day}}</b></td>
+                                <td><b >{{ hour.day.value}}</b></td>
                                 <td class="text-center"><b>Fermé</b></td>
                                 <td class="text-center">{{ hour.eveningStart | date('H:i')}} à {{ hour.eveningEnd | date('H:i')}}</td>
                             </tr>
                         {% elseif hour.isEveningClosed == true %}
                             <tr>
-                                <td><b>{{ hour.day }}</b></td>
+                                <td><b >{{ hour.day.value }}</b></td>
                                 <td class="text-center">{{ hour.lunchStart | date('H:i')}} à {{ hour.lunchEnd | date('H:i')}}</td>
                                 <td class="text-center"><b>Fermé</b></td>
                             </tr>
                         {%  else %}
                             <tr>
-                                <td><b>{{ hour.day }}</b></td>
+                                <td><b >{{ hour.day.value }}</b></td>
                                 <td class="text-center">{{ hour.lunchStart | date('H:i')}} à {{ hour.lunchEnd | date('H:i')}}</td>
                                 <td class="text-center"><b>{{ hour.eveningStart | date('H:i')}} à {{ hour.eveningEnd | date('H:i')}}</b></td>
                             </tr>

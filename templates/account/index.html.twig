@@ -1,0 +1,33 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Quai Antique - Profil{% endblock %}
+
+{% block body %}
+    <h2 class="text-center py-3 mb-3 text-capitalize text-decoration-underline display-1"> Profil Utilisateur</h2>
+
+    {{ form_start(userForm, {'action': path('app_user_edit'), 'method': 'POST'}) }}
+        <div class="text-center">
+            <b class="m-1 mb-3">{{ form_label(userForm.email, 'Email') }}</b>
+            <div class="m-1 mb-3">{{ form_widget(userForm.email) }}</div>
+            <b class="m-1 mb-3">{{ form_label(userForm.firstName, 'Prénom') }}</b>
+            <div class="m-1 mb-3">{{ form_widget(userForm.firstName) }}</div>
+            <b class="m-1 mb-3">{{ form_label(userForm.lastName, 'Nom de famille') }}</b>
+            <div class="m-1 mb-3">{{ form_widget(userForm.lastName) }}</div>
+            <b class="m-1 mb-3">{{ form_label(userForm.phoneNumber, 'Téléphone') }}</b>
+            <div class="m-1 mb-3">{{ form_widget(userForm.phoneNumber) }}</div>
+            <b class="m-1 mb-3">{{ form_label(userForm.defaultAllergy, 'Allergies') }}</b>
+            <div class="m-1 mb-3">{{ form_widget(userForm.defaultAllergy) }}</div>
+            <b class="m-1 mb-3">{{ form_label(userForm.defaultNbPlaces, 'Nombre de couverts') }}</b>
+            <div class="m-1 mb-3">{{ form_widget(userForm.defaultNbPlaces) }}</div>
+            <div class="row ">
+                <div class="col text-center">
+                    <a class="col-6 col-lg-4 btn btn-outline-danger m-1 mb-3 hover" href=" {{ path('app_forgot_password_request') }} " role="button">Changer votre mot de passe</a>
+                </div>
+            </div>
+            <div class="text-center col m-3">
+                <button id="form-res-submit" type="submit" class="container-button col-6 col-lg-4 btn btn-outline m-1 mb-3 hover">Sauvegarder</button>
+            </div>
+        </div>
+
+    {{ form_end(userForm) }}
+{% endblock %}

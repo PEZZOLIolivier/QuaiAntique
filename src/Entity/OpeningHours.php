@@ -5,6 +5,9 @@ namespace App\Entity;
 use App\Repository\OpeningHoursRepository;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
+use Doctrine\Persistence\ManagerRegistry;
+use Symfony\Component\HttpFoundation\Response;
+use function PHPUnit\Framework\isFalse;
 
 #[ORM\Entity(repositoryClass: OpeningHoursRepository::class)]
 class OpeningHours
@@ -14,8 +17,8 @@ class OpeningHours
     #[ORM\Column]
     private ?int $id = null;
 
-    #[ORM\Column(length: 11)]
-    private ?string $day = null;
+    #[ORM\Column(type: "string", enumType: Weekday::class)]
+    private Weekday $day;
 
     #[ORM\Column]
     private ?bool $isDayClosed = null;
@@ -49,19 +52,19 @@ class OpeningHours
         return $this->id;
     }
 
-    public function getDay(): ?string
+    public function getDay(): Weekday
     {
         return $this->day;
     }
 
-    public function setDay(string $day): static
+    public function setDay(Weekday $day)
     {
         $this->day = $day;
 
         return $this;
     }
 
-    public function isIsDayClosed(): ?bool
+    public function isDayClosed(): ?bool
     {
         return $this->isDayClosed;
     }
@@ -73,7 +76,7 @@ class OpeningHours
         return $this;
     }
 
-    public function isIsLunchClosed(): ?bool
+    public function isLunchClosed(): ?bool
     {
         return $this->isLunchClosed;
     }
@@ -121,7 +124,7 @@ class OpeningHours
         return $this;
     }
 
-    public function isIsEveningClosed(): ?bool
+    public function isEveningClosed(): ?bool
     {
         return $this->isEveningClosed;
     }
@@ -169,8 +172,7 @@ class OpeningHours
         return $this;
     }
 
-    public function __toString(): string
-    {
-        return $this->day;
+    public function __construct() {
+        $this->day = Weekday::Monday;
     }
 }

@@ -71,6 +71,10 @@ img:hover + .photo-title {
     -webkit-transform: translateY(-150px);
 }
 
+#liveToast {
+    display: inline-block;
+}
+
 /* Page Card & Menus */
 
 .table {
@@ -85,4 +89,10 @@ img:hover + .photo-title {
 
 li {
     list-style:none;
+}
+
+.reservation {
+    color: #720000;
+    border-color: #720000;
+    background-color: floralwhite;
 }

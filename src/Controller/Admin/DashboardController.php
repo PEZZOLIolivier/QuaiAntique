@@ -7,6 +7,7 @@ use App\Entity\Dish;
 use App\Entity\Menu;
 use App\Entity\OpeningHours;
 use App\Entity\Photo;
+use App\Entity\Reservation;
 use App\Entity\User;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Dashboard;
 use EasyCorp\Bundle\EasyAdminBundle\Config\MenuItem;
@@ -21,7 +22,7 @@ class DashboardController extends AbstractDashboardController
     public function index(): Response
     {
          $adminUrlGenerator = $this->container->get(AdminUrlGenerator::class);
-         return $this->redirect($adminUrlGenerator->setController(UserCrudController::class)->generateUrl());
+         return $this->redirect($adminUrlGenerator->setController(ReservationCrudController::class)->generateUrl());
     }
 
     public function configureDashboard(): Dashboard
@@ -37,6 +38,7 @@ class DashboardController extends AbstractDashboardController
 
             MenuItem::section('Horaires & Réservations'),
             MenuItem::linkToCrud('Horaires', 'fa-solid fa-clock', OpeningHours::class),
+            MenuItem::linkToCrud('Réservations', 'fa-solid fa-calendar', Reservation::class),
 
             MenuItem::section('Plâts et menus'),
             MenuItem::linkToCrud('Catégories', 'fa-solid fa-tag', Category::class),

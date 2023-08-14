@@ -7,6 +7,10 @@ use EasyCorp\Bundle\EasyAdminBundle\Config\Action;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Actions;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Crud;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractCrudController;
+use EasyCorp\Bundle\EasyAdminBundle\Field\BooleanField;
+use EasyCorp\Bundle\EasyAdminBundle\Field\DateField;
+use EasyCorp\Bundle\EasyAdminBundle\Field\IntegerField;
+use EasyCorp\Bundle\EasyAdminBundle\Field\TextField;
 
 class UserCrudController extends AbstractCrudController
 {
@@ -19,5 +23,17 @@ class UserCrudController extends AbstractCrudController
     {
         return $actions
             ->remove(Crud::PAGE_INDEX, Action::NEW);
+    }
+
+    public function configureFields(string $pageName): iterable
+    {
+        return [
+            BooleanField::new('isVerified', 'Vérifié'),
+            TextField::new('email', 'Email'),
+            TextField::new('lastName', 'Nom de famille'),
+            TextField::new('firstName', 'Prénom'),
+            IntegerField::new('phoneNumber', 'Numéro de téléphone'),
+            DateField::new('birthday', 'Date de naissance')
+        ];
     }
 }

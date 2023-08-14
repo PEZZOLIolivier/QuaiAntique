@@ -5,6 +5,7 @@ namespace App\Repository;
 use App\Entity\OpeningHours;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Persistence\ManagerRegistry;
+use Brick\DateTime\LocalDateTime;
 
 /**
  * @extends ServiceEntityRepository<OpeningHours>
@@ -39,28 +40,13 @@ class OpeningHoursRepository extends ServiceEntityRepository
         }
     }
 
-//    /**
-//     * @return OpeningHours[] Returns an array of OpeningHours objects
-//     */
-//    public function findByExampleField($value): array
-//    {
-//        return $this->createQueryBuilder('o')
-//            ->andWhere('o.exampleField = :val')
-//            ->setParameter('val', $value)
-//            ->orderBy('o.id', 'ASC')
-//            ->setMaxResults(10)
-//            ->getQuery()
-//            ->getResult()
-//        ;
-//    }
-
-//    public function findOneBySomeField($value): ?OpeningHours
-//    {
-//        return $this->createQueryBuilder('o')
-//            ->andWhere('o.exampleField = :val')
-//            ->setParameter('val', $value)
-//            ->getQuery()
-//            ->getOneOrNullResult()
-//        ;
-//    }
+    public function getByDateTime(\DateTime $d) {
+        $openHours = $this->findAll();
+        $d = LocalDateTime::fromNativeDateTime($d);
+        $r = array_filter($openHours, function($val) use ($d) {
+            return $val->GetDay()->name === $d->getDayOfWeek()->__toString();
+        });
+        $r = reset($r);
+        return $r;
+    }
 }

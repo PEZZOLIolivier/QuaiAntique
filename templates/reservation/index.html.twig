@@ -1,0 +1,50 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Reservation index{% endblock %}
+
+{% block body %}
+    <h2 class="text-center py-3 mb-3 text-capitalize text-decoration-underline display-1"> Réserver</h2>
+
+    {{ form_start(reservationForm, {'action': path('app_reservation'), 'method': 'POST'}) }}
+        <div class="row text-center">
+            <div class="alert alert-warning m-auto p-2 border rounded shadow-sm w-auto align-self-center">
+                <p class=" text-danger"><b>Aucune réservation ne peut-être effectuer au cours de la dernière heure de service</b></p>
+                <p><i>pour toutes demandes spéciales merci de contacter le restaurant directement</i></p>
+            </div>
+        </div>
+
+        <div class="row text-center">
+            <b class="col-12 m-1">{{ form_label(reservationForm.date) }}</b>
+            <div class="col-12 m-1 mb-3">{{ form_widget(reservationForm.date, {'id': 'form-res-date-field'}) }}</div>
+        </div>
+
+        <div class="row text-center">
+            <div class="m-1 mb-3 col-12">Places disponibles : <span id="slots"></span></div>
+        </div>
+
+        <div class="row text-center">
+            <b class="col-12 m-1">{{ form_label(reservationForm.lastName, 'Nom de famille') }}</b>
+            <div class="col-12 m-1 mb-3">{{ form_widget(reservationForm.lastName, {'id': 'form-res-date-field'}) }}</div>
+        </div>
+        <div class="row text-center">
+            <b class="col-12 m-1">{{ form_label(reservationForm.nbPlaces, 'Nombre de couverts') }}</b>
+            <div class="col-12 m-1 mb-3">{{ form_widget(reservationForm.nbPlaces, {'id': 'form-res-date-field'}) }}</div>
+        </div>
+        <div class="row text-center">
+            <b class="col-12 m-1">{{ form_label(reservationForm.allergy, 'Allergies') }}</b>
+            <div class="col-12 m-1 mb-3">{{ form_widget(reservationForm.allergy, {'id': 'form-res-date-field'}) }}</div>
+        </div>
+    {% if is_granted('ROLE_USER') %}
+        <div class="text-center col m-3">
+            <button id="form-res-submit" type="submit" class="container-button col-10 col-lg-4 btn btn-outline m-1 mb-3 hover">Réservez</button>
+        </div>
+    {% else %}
+        <div class="text-center col m-3">
+            <a class="container-button col-4 btn btn-outline m-1 mb-3 hover" href=" {{ path('app_register') }} " role="button">S'enregistrer</a>
+        </div>
+        <div class="text-center col m-3">
+            <a class="container-button col-4 btn btn-outline m-1 mb-3 hover" href=" {{ path('app_login') }} " role="button">Connexion</a>
+        </div>
+    {% endif %}
+    {{ form_end(reservationForm) }}
+{% endblock %}

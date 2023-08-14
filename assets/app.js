@@ -10,4 +10,17 @@ import './styles/app.css';
 
 import Lightbox from 'bs5-lightbox';
 
+const $ = require('jquery');
+
 document.querySelectorAll('.my-lightbox-toggle').forEach(el => el.addEventListener('click', Lightbox.initialize));
+
+let liveToast = document.getElementById('liveToast')
+
+if (liveToast) {
+    liveToast.classList.add('show');
+}
+
+
+
+
+

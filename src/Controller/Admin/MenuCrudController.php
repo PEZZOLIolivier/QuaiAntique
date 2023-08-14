@@ -22,7 +22,7 @@ class MenuCrudController extends AbstractCrudController
         return [
             TextField::new('name',label: 'Nom du menu'),
             TextField::new('description',label: 'Déscription'),
-            MoneyField::new('price')
+            MoneyField::new('price', 'prix')
                 ->setCurrency('EUR'),
             AssociationField::new('photo', label: 'Photos')
                 ->hideOnIndex(),
