@@ -32,7 +32,6 @@ class AppFixtures extends Fixture
         $eveningStart = new \DateTime('19:00');
         $eveningEnd = new \DateTime('23:00');
 
-
         $monday = new OpeningHours();
         $monday->setDay(Weekday::Monday)
             ->setIsDayClosed(true)
@@ -211,86 +210,88 @@ class AppFixtures extends Fixture
         $c2 = new Category();
         $c2->setName("Plats");
         $c2->setIsActive(true);
-        $manager->persist($c1);
+        $manager->persist($c2);
 
         $c3 = new Category();
         $c3->setName("Desserts");
         $c3->setIsActive(true);
-        $manager->persist($c1);
+        $manager->persist($c3);
 
         $manager->flush();
 
         // CARD & MENUS
 
         $menu1 = new Menu();
-        $menu1->setName("Menus du jour");
-        $menu1->setDescription("Viande accompagnée de sa garniture");
-        $menu1->setPhoto($p1);
-        $menu1->setIsPublish(true);
-        $menu1->setPrice(17.00);
+        $menu1->setName("Menus du jour")
+            ->setDescription("Viande accompagnée de sa garniture")
+            ->setPhoto($p1)
+            ->setIsPublish(true)
+            ->setPrice(17.50);
         $manager->persist($menu1);
 
         $menu2 = new Menu();
-        $menu2->setName("Menus Savoyard (4 personnes)");
-        $menu2->setDescription(" 	Fondue Savoyarde (vin blanc et fromage de savoie)");
-        $menu2->setPhoto($p4);
-        $menu2->setIsPublish(true);
-        $menu2->setPrice(54.00);
+        $menu2->setName("Menus Savoyard (4 personnes)")
+            ->setDescription(" 	Fondue Savoyarde (vin blanc et fromage de savoie)")
+            ->setPhoto($p4)
+            ->setIsPublish(true)
+            ->setPrice(54.00);
         $manager->persist($menu2);
 
+        $manager->flush();
+
         $dish1 = new Dish();
-        $dish1->setCategory($c1);
-        $dish1->setName("Salade composé");
-        $dish1->setDescription(" 	Plateaux de légumes et jambons en salade)");
-        $dish1->setPhoto($p7);
-        $dish1->setIsPublish(true);
-        $dish1->setPrice(8.50);
+        $dish1->setCategory($c1)
+            ->setName("Salade composé")
+            ->setDescription(" 	Plateaux de légumes et jambons en salade)")
+            ->setPhoto($p7)
+            ->setIsPublish(true)
+            ->setPrice(8.00);
         $manager->persist($dish1);
 
         $dish2 = new Dish();
-        $dish2->setCategory($c1);
-        $dish2->setName("Salade César");
-        $dish2->setDescription("Salade césare maison");
-        $dish2->setPhoto($p11);
-        $dish2->setIsPublish(true);
-        $dish2->setPrice(7.50);
+        $dish2->setCategory($c1)
+            ->setName("Salade César")
+            ->setDescription("Salade césare maison")
+            ->setPhoto($p11)
+            ->setIsPublish(true)
+            ->setPrice(7.50);
         $manager->persist($dish2);
 
         $dish3 = new Dish();
-        $dish3->setCategory($c2);
-        $dish3->setName("Risotto");
-        $dish3->setDescription("Risotto campagnard aux carottes et champignons frais");
-        $dish3->setPhoto($p10);
-        $dish3->setIsPublish(true);
-        $dish3->setPrice(22.00);
+        $dish3->setCategory($c2)
+            ->setName("Risotto")
+            ->setDescription("Risotto campagnard aux carottes et champignons frais")
+            ->setPhoto($p10)
+            ->setIsPublish(true)
+            ->setPrice(22.00);
         $manager->persist($dish3);
 
         $dish4 = new Dish();
-        $dish4->setCategory($c2);
-        $dish4->setName("Colin à la bordelaise");
-        $dish4->setDescription("Filet de colin à la bordelaise accompagné de riz");
-        $dish4->setPhoto($p3);
-        $dish4->setIsPublish(true);
-        $dish4->setPrice(15.00);
+        $dish4->setCategory($c2)
+            ->setName("Colin à la bordelaise")
+            ->setDescription("Filet de colin à la bordelaise accompagné de riz")
+            ->setPhoto($p3)
+            ->setIsPublish(true)
+            ->setPrice(15.00);
         $manager->persist($dish4);
 
         $dish5 = new Dish();
-        $dish5->setCategory($c3);
-        $dish5->setName("Café liégeois");
-        $dish5->setDescription("Café liégeois fait maison");
-        $dish5->setPhoto($p2);
-        $dish5->setIsPublish(true);
-        $dish5->setPrice(9.50);
+        $dish5->setCategory($c3)
+            ->setName("Café liégeois")
+            ->setDescription("Café liégeois fait maison")
+            ->setPhoto($p2)
+            ->setIsPublish(true)
+            ->setPrice(9.50);
         $manager->persist($dish5);
 
-        $dish2 = new Dish();
-        $dish2->setCategory($c3);
-        $dish2->setName("Tarte au citron");
-        $dish2->setDescription("Tarte au citron faite maison sur son lite merringué");
-        $dish2->setPhoto($p12);
-        $dish2->setIsPublish(true);
-        $dish1->setPrice(9.00);
-        $manager->persist($dish2);
+        $dish6 = new Dish();
+        $dish6->setCategory($c3)
+            ->setName("Tarte au citron")
+            ->setDescription("Tarte au citron faite maison sur son lite merringué")
+            ->setPhoto($p12)
+            ->setIsPublish(true)
+            ->setPrice(9.00);
+        $manager->persist($dish6);
 
         $manager->flush();
 
@@ -303,11 +304,12 @@ class AppFixtures extends Fixture
         $user1->setFirstName('Olivier');
         $user1->setPhoneNumber('01 02 03 04 05');
         $user1->setIsVerified(true);
+        $user1->setRoles(["ROLE_ADMIN"]);
         $user1->setDefaultNbPlaces(1);
         $manager->persist($user1);
 
         $user2 = new User();
-        $user2->setEmail('admin@quai-antique.fr');
+        $user2->setEmail('testuser@quai-antique.fr');
         $user2->setPassword($this->hasher->hashPassword($user2, '0123456789'));
         $user2->setLastName('ASTRUC');
         $user2->setFirstName('Arnaud');
