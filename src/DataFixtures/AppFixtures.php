@@ -11,19 +11,9 @@ use App\Entity\Weekday;
 use App\Entity\OpeningHours;
 use App\Entity\Photo;
 use App\Entity\Category;
-use App\Entity\User;
-use Symfony\Component\PasswordHasher\Hasher\UserPasswordHasherInterface;
-
 
 class AppFixtures extends Fixture
 {
-    private UserPasswordHasherInterface $hasher;
-
-    public function __construct(UserPasswordHasherInterface $hasher)
-    {
-        $this->hasher = $hasher;
-    }
-
     public function load(ObjectManager $manager): void
     {
         // OPENING HOURS
@@ -295,29 +285,5 @@ class AppFixtures extends Fixture
 
         $manager->flush();
 
-        //USERS
-
-        $user1 = new User();
-        $user1->setEmail('admin@quai-antique.fr');
-        $user1->setPassword($this->hasher->hashPassword($user1, '0123456789'));
-        $user1->setLastName('PEZZOLI');
-        $user1->setFirstName('Olivier');
-        $user1->setPhoneNumber('01 02 03 04 05');
-        $user1->setIsVerified(true);
-        $user1->setRoles(["ROLE_ADMIN"]);
-        $user1->setDefaultNbPlaces(1);
-        $manager->persist($user1);
-
-        $user2 = new User();
-        $user2->setEmail('testuser@quai-antique.fr');
-        $user2->setPassword($this->hasher->hashPassword($user2, '0123456789'));
-        $user2->setLastName('ASTRUC');
-        $user2->setFirstName('Arnaud');
-        $user2->setPhoneNumber('06 40 30 04 05');
-        $user2->setIsVerified(true);
-        $user2->setDefaultNbPlaces(4);
-        $manager->persist($user2);
-
-        $manager->flush();
     }
 }

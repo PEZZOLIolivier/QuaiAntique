@@ -19,6 +19,7 @@ class ReservationCrudController extends AbstractCrudController
     public function configureFields(string $pageName): iterable
     {
         return [
+            IntegerField::new('id', 'N° réservation')->onlyOnIndex(),
             DateTimeField::new('date', 'date'),
             TextField::new('lastName', 'Nom de famille'),
             IntegerField::new('nbPlaces', 'Nombre de couverts'),

@@ -43,10 +43,10 @@ class ReservationDateValidator extends ConstraintValidator
         $msg = '';
 
         if ($booking < $datenow) {
-            $msg = $constraint->messageBefore;
+            $msg = $this->context->addViolation($constraint->messageBefore);
 
         } elseif ($booking > $date60d) {
-            $msg = $constraint->messageAfter;
+            $msg = $this->context->addViolation($constraint->messageAfter);
 
         } elseif ($openingHours->isDayClosed()) {
             $msg = $this->context->addViolation($constraint->messageDayClosed);
@@ -55,18 +55,18 @@ class ReservationDateValidator extends ConstraintValidator
             $evening_start = LocalTime::fromNativeDateTime($openingHours->getEveningStart());
             $evening_end = LocalTime::fromNativeDateTime($openingHours->getEveningEnd());
             if ($time->isBefore($evening_start) || $time->isAfter($evening_end)) {
-                $msg = $constraint->messageOutsideOh;
+                $msg = $this->context->addViolation($constraint->messageOutsideOh);
             } elseif ($time->isAfter($evening_end->minusMinutes(60)) && $time->isBeforeOrEqualTo($evening_end)){
-                $msg = $constraint->messageLastHour;
+                $msg = $this->context->addViolation($constraint->messageLastHour);
             }
 
         } elseif ($openingHours->isEveningClosed()) {
             $lunch_start = LocalTime::fromNativeDateTime($openingHours->getLunchStart());
             $lunch_end = LocalTime::fromNativeDateTime($openingHours->getLunchEnd());
             if ($time->isBefore($lunch_start) || $time->isAfter($lunch_end)) {
-                $msg = $constraint->messageOutsideOh;
+                $msg = $this->context->addViolation($constraint->messageOutsideOh);
             } elseif ($time->isAfter($lunch_end->minusMinutes(60)) && $time->isBeforeOrEqualTo($lunch_end)){
-                $msg = $constraint->messageLastHour;
+                $msg = $this->context->addViolation($constraint->messageLastHour);
             }
 
         } else {
@@ -75,9 +75,9 @@ class ReservationDateValidator extends ConstraintValidator
             $evening_start = LocalTime::fromNativeDateTime($openingHours->getEveningStart());
             $evening_end = LocalTime::fromNativeDateTime($openingHours->getEveningEnd());
             if ($time->isBefore($lunch_start) || $time->isAfter($evening_end) || ($time->isAfter($lunch_end) && $time->isBefore($evening_start))) {
-                $msg = $constraint->messageOutsideOh;
+                $msg = $this->context->addViolation($constraint->messageOutsideOh);
             } elseif (($time->isAfter($lunch_end->minusMinutes(60)) && $time->isBeforeOrEqualTo($lunch_end)) || ($time->isAfter($evening_end->minusMinutes(60)) && $time->isBeforeOrEqualTo($evening_end))) {
-                $msg = $constraint->messageLastHour;
+                $msg = $this->context->addViolation($constraint->messageLastHour);
             }
         }
     }

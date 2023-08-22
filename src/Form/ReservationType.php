@@ -33,7 +33,7 @@ class ReservationType extends AbstractType
                 'widget' => 'single_text',
                 'required' => true,
                 'attr' => [
-                    'class' => 'reservation',
+                    'class' => 'reservation js-datepicker',
                 ],
                 'constraints' => [new ReservationDate($this->_getOpeningHours())]
             ])

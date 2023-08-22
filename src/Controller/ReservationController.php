@@ -62,7 +62,6 @@ class ReservationController extends AbstractController
                 ["Content-Type" => "application/json;charset=UTF-8"]
             );
         }
-//        $booking = LocalDateTime::parse(json_decode($request->getContent(), true)["bookingDate"]);
 
         $ohRepo = $doctrine->getManager()->getRepository(OpeningHours::class);
         $openHours = $ohRepo->findAll();
@@ -90,6 +89,13 @@ class ReservationController extends AbstractController
             $evening_end = new LocalDateTime($booking->getDate(), LocalTime::fromNativeDateTime($oh->getEveningEnd()));
             if ($booking->isAfterOrEqualTo($evening_start) && $booking->isBefore($evening_end->minusMinutes(60))) {
                 $maxPlaces = $oh->getEveningMaxPlaces();
+            } elseif ($booking->isAfterOrEqualTo($evening_end->minusMinutes(60)) && $booking->isBefore($evening_end)) {
+                $res = array("slots" => strval( 'Vous ne pouvez pas réserver pendant la dernière heure d\'un service'));
+                return new Response(
+                    json_encode($res),
+                    200,
+                    ["Content-Type" => "application/json;charset=UTF-8"]
+                );
             } else {
                 $res = array("slots" => strval( 'Merci de réserver pendant les horraires d\'ouverture'));
                 return new Response(
@@ -104,6 +110,13 @@ class ReservationController extends AbstractController
             $lunch_end = new LocalDateTime($booking->getDate(), LocalTime::fromNativeDateTime($oh->getLunchEnd()));
             if ($booking->isAfterOrEqualTo($lunch_start) && $booking->isBefore($lunch_end->minusMinutes(60))) {
                 $maxPlaces = $oh->getLunchMaxPlaces();
+            } elseif ($booking->isAfterOrEqualTo($lunch_end->minusMinutes(60)) && $booking->isBefore($lunch_end)) {
+                $res = array("slots" => strval( 'Vous ne pouvez pas réserver pendant la dernière heure d\'un service'));
+                return new Response(
+                    json_encode($res),
+                    200,
+                    ["Content-Type" => "application/json;charset=UTF-8"]
+                );
             } else {
                 $res = array("slots" => strval( 'Merci de réserver pendant les horraires d\'ouverture'));
                 return new Response(
@@ -121,8 +134,22 @@ class ReservationController extends AbstractController
 
             if ($booking->isAfterOrEqualTo($lunch_start) && $booking->isBefore($lunch_end->minusMinutes(60))) {
                 $maxPlaces = $oh->getLunchMaxPlaces();
+            } elseif ($booking->isAfterOrEqualTo($lunch_end->minusMinutes(60)) && $booking->isBefore($lunch_end)) {
+                $res = array("slots" => strval( 'Vous ne pouvez pas réserver pendant la dernière heure d\'un service'));
+                return new Response(
+                    json_encode($res),
+                    200,
+                    ["Content-Type" => "application/json;charset=UTF-8"]
+                );
             } elseif ($booking->isAfterOrEqualTo($evening_start) && $booking->isBefore($evening_end->minusMinutes(60))) {
                 $maxPlaces = $oh->getEveningMaxPlaces();
+            } elseif ($booking->isAfterOrEqualTo($evening_end->minusMinutes(60)) && $booking->isBefore($evening_end)) {
+                $res = array("slots" => strval( 'Vous ne pouvez pas réserver pendant la dernière heure d\'un service'));
+                return new Response(
+                    json_encode($res),
+                    200,
+                    ["Content-Type" => "application/json;charset=UTF-8"]
+                );
             } else {
                 $res = array("slots" => strval( 'Merci de réserver pendant les horraires d\'ouverture'));
                 return new Response(
