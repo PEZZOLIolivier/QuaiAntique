@@ -9,6 +9,8 @@ use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
+use Symfony\Component\Validator\Constraints\Length;
+use Symfony\Component\Validator\Constraints\Regex;
 
 class WelcomeType extends AbstractType
 {
@@ -22,7 +24,15 @@ class WelcomeType extends AbstractType
                 'label' => "Mot de passe"
             ])
             ->add('lastName', TextType::class, [
-                'label' => "Nom de famille"
+                'label' => "Nom de famille",
+                'constraints' => [
+                    new Regex("[^&~#'{}!()_%$@<>]", "Vous ne pouvez pas utliser de caractères spéciaux"),
+                    new Length([
+                        'max' => 50,
+                        'maxMessage' => 'Vous ne pouvez pas utiliser plus de 50 caractères'
+                    ]),
+                ],
+
             ])
             ->add('submit', SubmitType::class, [
                 'label' => 'Installer',

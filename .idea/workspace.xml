@@ -5,88 +5,23 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4b911294-7ccd-413f-9db5-c89dee114baa" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/EventListener/ExceptionListener.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Form/WelcomeType.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Model/WelcomeModel.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Service/DatabaseService.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/home/welcome.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/services.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/services.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/datetimepicker_bower.json at master · xdan_datetimepicker · GitHub_fichiers/794318.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/datetimepicker_bower.json at master · xdan_datetimepicker · GitHub_fichiers/79609619.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/datetimepicker_bower.json at master · xdan_datetimepicker · GitHub_fichiers/app_assets_modules_blackbird-monolith_hooks_use-navigate-to-q.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/datetimepicker_bower.json at master · xdan_datetimepicker · GitHub_fichiers/app_assets_modules_github_behaviors_ajax-error_ts-app_assets_.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/datetimepicker_bower.json at master · xdan_datetimepicker · GitHub_fichiers/app_assets_modules_github_behaviors_commenting_edit_ts-app_as.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/datetimepicker_bower.json at master · xdan_datetimepicker · GitHub_fichiers/app_assets_modules_github_behaviors_keyboard-shortcuts-helper.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/datetimepicker_bower.json at master · xdan_datetimepicker · GitHub_fichiers/app_assets_modules_github_blob-anchor_ts-app_assets_modules_g.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/datetimepicker_bower.json at master · xdan_datetimepicker · GitHub_fichiers/app_assets_modules_github_sticky-scroll-into-view_ts-1e1fcb30.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/datetimepicker_bower.json at master · xdan_datetimepicker · GitHub_fichiers/app_assets_modules_github_updatable-content_ts-88070db28a55.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/datetimepicker_bower.json at master · xdan_datetimepicker · GitHub_fichiers/behaviors-29d30d2f7578.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/datetimepicker_bower.json at master · xdan_datetimepicker · GitHub_fichiers/code-554c92b43987.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/datetimepicker_bower.json at master · xdan_datetimepicker · GitHub_fichiers/code-menu-7dfb8cccdca1.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/datetimepicker_bower.json at master · xdan_datetimepicker · GitHub_fichiers/command-palette-13bd844fa1c6.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/datetimepicker_bower.json at master · xdan_datetimepicker · GitHub_fichiers/dark-030e28cb8394.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/datetimepicker_bower.json at master · xdan_datetimepicker · GitHub_fichiers/element-registry-a45ff9a197f5.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/datetimepicker_bower.json at master · xdan_datetimepicker · GitHub_fichiers/environment-07edc14d05eb.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/datetimepicker_bower.json at master · xdan_datetimepicker · GitHub_fichiers/github-elements-511cba34c4d0.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/datetimepicker_bower.json at master · xdan_datetimepicker · GitHub_fichiers/github-f0d28f183bb7.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/datetimepicker_bower.json at master · xdan_datetimepicker · GitHub_fichiers/global-a55bf4a27d6d.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/datetimepicker_bower.json at master · xdan_datetimepicker · GitHub_fichiers/light-946902aac6a1.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/datetimepicker_bower.json at master · xdan_datetimepicker · GitHub_fichiers/notifications-global-0104a8043aa4.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/datetimepicker_bower.json at master · xdan_datetimepicker · GitHub_fichiers/primer-0e3420bbec16.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/datetimepicker_bower.json at master · xdan_datetimepicker · GitHub_fichiers/primer-primitives-fb1d51d1ef66.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/datetimepicker_bower.json at master · xdan_datetimepicker · GitHub_fichiers/react-code-view-fc139411be31.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/datetimepicker_bower.json at master · xdan_datetimepicker · GitHub_fichiers/react-lib-210c4b5934c3.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/datetimepicker_bower.json at master · xdan_datetimepicker · GitHub_fichiers/ui_packages_react-core_Entry_tsx-c2b25c675883.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/datetimepicker_bower.json at master · xdan_datetimepicker · GitHub_fichiers/ui_packages_react-core_deferred-registry_ts-ui_packages_react.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/datetimepicker_bower.json at master · xdan_datetimepicker · GitHub_fichiers/ui_packages_ref-selector_RefSelector_tsx-ui_packages_safe-htm.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/datetimepicker_bower.json at master · xdan_datetimepicker · GitHub_fichiers/ui_packages_soft-nav_soft-nav_ts-899d6d5b0d82.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/datetimepicker_bower.json at master · xdan_datetimepicker · GitHub_fichiers/ui_packages_trusted-types-policies_policy_ts-ui_packages_trus.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/datetimepicker_bower.json at master · xdan_datetimepicker · GitHub_fichiers/vendors-node_modules_color-convert_index_js-node_modules_gith.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/datetimepicker_bower.json at master · xdan_datetimepicker · GitHub_fichiers/vendors-node_modules_delegated-events_dist_index_js-node__002.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/datetimepicker_bower.json at master · xdan_datetimepicker · GitHub_fichiers/vendors-node_modules_delegated-events_dist_index_js-node_modu.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/datetimepicker_bower.json at master · xdan_datetimepicker · GitHub_fichiers/vendors-node_modules_dompurify_dist_purify_js-64d590970fa6.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/datetimepicker_bower.json at master · xdan_datetimepicker · GitHub_fichiers/vendors-node_modules_fzy_js_index_js-node_modules_github_mark.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/datetimepicker_bower.json at master · xdan_datetimepicker · GitHub_fichiers/vendors-node_modules_github_blackbird-parser_dist_blackbird_j.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/datetimepicker_bower.json at master · xdan_datetimepicker · GitHub_fichiers/vendors-node_modules_github_clipboard-copy-element_dist_index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/datetimepicker_bower.json at master · xdan_datetimepicker · GitHub_fichiers/vendors-node_modules_github_file-attachment-element_dist_inde.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/datetimepicker_bower.json at master · xdan_datetimepicker · GitHub_fichiers/vendors-node_modules_github_filter-input-element_dist_index_j.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/datetimepicker_bower.json at master · xdan_datetimepicker · GitHub_fichiers/vendors-node_modules_github_mini-throttle_dist_index_js-node_.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/datetimepicker_bower.json at master · xdan_datetimepicker · GitHub_fichiers/vendors-node_modules_github_paste-markdown_dist_index_esm_js-.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/datetimepicker_bower.json at master · xdan_datetimepicker · GitHub_fichiers/vendors-node_modules_github_relative-time-element_dist_index_.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/datetimepicker_bower.json at master · xdan_datetimepicker · GitHub_fichiers/vendors-node_modules_github_remote-form_dist_index_js-node_mo.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/datetimepicker_bower.json at master · xdan_datetimepicker · GitHub_fichiers/vendors-node_modules_github_selector-observer_dist_index_esm_.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/datetimepicker_bower.json at master · xdan_datetimepicker · GitHub_fichiers/vendors-node_modules_github_turbo_dist_turbo_es2017-esm_js-ba.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/datetimepicker_bower.json at master · xdan_datetimepicker · GitHub_fichiers/vendors-node_modules_lit-html_lit-html_js-9d9fe1859ce5.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/datetimepicker_bower.json at master · xdan_datetimepicker · GitHub_fichiers/vendors-node_modules_morphdom_dist_morphdom-esm_js-b1fdd7158c.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/datetimepicker_bower.json at master · xdan_datetimepicker · GitHub_fichiers/vendors-node_modules_primer_behaviors_dist_esm_anchored-posit.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/datetimepicker_bower.json at master · xdan_datetimepicker · GitHub_fichiers/vendors-node_modules_primer_behaviors_dist_esm_focus-zone_js-.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/datetimepicker_bower.json at master · xdan_datetimepicker · GitHub_fichiers/vendors-node_modules_primer_behaviors_dist_esm_scroll-into-vi.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/datetimepicker_bower.json at master · xdan_datetimepicker · GitHub_fichiers/vendors-node_modules_primer_octicons-react_dist_index_esm_js-.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/datetimepicker_bower.json at master · xdan_datetimepicker · GitHub_fichiers/vendors-node_modules_primer_react_lib-esm_ActionList_index_js.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/datetimepicker_bower.json at master · xdan_datetimepicker · GitHub_fichiers/vendors-node_modules_primer_react_lib-esm_ActionMenu_js-node_.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/datetimepicker_bower.json at master · xdan_datetimepicker · GitHub_fichiers/vendors-node_modules_primer_react_lib-esm_Avatar_Avatar_js-no.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/datetimepicker_bower.json at master · xdan_datetimepicker · GitHub_fichiers/vendors-node_modules_primer_react_lib-esm_Button_IconButton_j.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/datetimepicker_bower.json at master · xdan_datetimepicker · GitHub_fichiers/vendors-node_modules_primer_react_lib-esm_Dialog_Confirmation.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/datetimepicker_bower.json at master · xdan_datetimepicker · GitHub_fichiers/vendors-node_modules_primer_react_lib-esm_Dialog_js-node_modu.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/datetimepicker_bower.json at master · xdan_datetimepicker · GitHub_fichiers/vendors-node_modules_primer_react_lib-esm_FormControl_FormCon.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/datetimepicker_bower.json at master · xdan_datetimepicker · GitHub_fichiers/vendors-node_modules_primer_react_lib-esm_Heading_Heading_js-.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/datetimepicker_bower.json at master · xdan_datetimepicker · GitHub_fichiers/vendors-node_modules_primer_react_lib-esm_TreeView_TreeView_j.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/datetimepicker_bower.json at master · xdan_datetimepicker · GitHub_fichiers/vendors-node_modules_primer_react_lib-esm_UnderlineNav2_index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/datetimepicker_bower.json at master · xdan_datetimepicker · GitHub_fichiers/vendors-node_modules_primer_react_lib-esm_deprecated_ActionLi.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/datetimepicker_bower.json at master · xdan_datetimepicker · GitHub_fichiers/vendors-node_modules_primer_view-components_app_components_pr.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/datetimepicker_bower.json at master · xdan_datetimepicker · GitHub_fichiers/vendors-node_modules_stacktrace-parser_dist_stack-trace-parse.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/datetimepicker_bower.json at master · xdan_datetimepicker · GitHub_fichiers/wp-runtime-873c867dacde.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/Admin/ReservationCrudController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/Admin/ReservationCrudController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/HomeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/HomeController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/ReservationController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/ReservationController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/DataFixtures/AppFixtures.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/DataFixtures/AppFixtures.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/packages/security.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/packages/security.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/RegistrationController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/RegistrationController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/ResetPasswordController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/ResetPasswordController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/Reservation.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Reservation.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/User.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Form/ChangePasswordFormType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/ChangePasswordFormType.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Form/RegistrationFormType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/RegistrationFormType.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Form/ReservationType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/ReservationType.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Repository/UserRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/UserRepository.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Validator/ReservationDateValidator.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Validator/ReservationDateValidator.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/base.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/registration/confirmation_email.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/registration/confirmation_email.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Form/ResetPasswordRequestFormType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/ResetPasswordRequestFormType.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Form/UserType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/UserType.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Form/WelcomeType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/WelcomeType.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/registration/register.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/registration/register.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/reset_password/check_email.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/reset_password/check_email.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/reset_password/email.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/reset_password/email.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/reset_password/request.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/reset_password/request.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/reset_password/reset.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/reset_password/reset.html.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -272,21 +207,21 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/home/olivier/Bureau/ECF/TESTDL/QuaiAntique/src/DataFixtures/AppFixtures.php&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;project.propVCSSupport.DirectoryMappings&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "/home/olivier/Bureau/ECF/QuaiAntique",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "project.propVCSSupport.DirectoryMappings",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/public/pictures/photos" />
@@ -347,6 +282,9 @@
       <workItem from="1692190225874" duration="3482000" />
       <workItem from="1692367028912" duration="13322000" />
       <workItem from="1692622647927" duration="7936000" />
+      <workItem from="1692715544022" duration="322000" />
+      <workItem from="1692708886361" duration="91000" />
+      <workItem from="1692710038526" duration="7887000" />
     </task>
     <servers />
   </component>

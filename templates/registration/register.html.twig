@@ -11,9 +11,11 @@
                 <div class="row mb-2 px-3 text-center">
                     <div class="col-12 p-1">{{ form_label(registrationForm.email) }}</div>
                     <div class="col-12 p-2">{{ form_widget(registrationForm.email) }}</div>
+                    <div>{{ form_errors(registrationForm.email) }}</div>
                 </div>
                 <div class="row mb-2  px-3 text-center">
-                    <div class="col-12 p-1">{{ form_label(registrationForm.password) }}{{ form_widget(registrationForm.password) }}</div
+                    <div class="col-12 p-1">{{ form_label(registrationForm.password) }}{{ form_widget(registrationForm.password) }}</div>
+                    <div class="form-error">{{ form_errors(registrationForm.password) }}</div>
                 </div>
             </div>
         </div>
@@ -22,18 +24,22 @@
             <div class="row mb-2 px-3 text-center">
                 <div class="col-12 p-1">{{ form_label(registrationForm.lastName) }}</div>
                 <div class="col-12 p-1">{{ form_widget(registrationForm.lastName) }}</div>
+                <div>{{ form_errors(registrationForm.lastName) }}</div>
             </div>
             <div class="row mb-2 px-3 text-center">
                 <div class="col-12 p-1">{{ form_label(registrationForm.firstName) }}</div>
                 <div class="col-12 p-1">{{ form_widget(registrationForm.firstName) }}</div>
+                <div>{{ form_errors(registrationForm.firstName) }}</div>
             </div>
             <div class="row mb-2 px-3 text-center">
                 <div class="col-12 p-1">{{ form_label(registrationForm.phoneNumber) }}</div>
                 <div class="col-12 p-1">{{ form_widget(registrationForm.phoneNumber) }}</div>
+                <div>{{ form_errors(registrationForm.phoneNumber) }}</div>
             </div>
             <div class="row mb-2 px-3 text-center">
                 <div class="col-12 p-1">{{ form_label(registrationForm.birthday) }}</div>
                 <div class="col-12 p-1">{{ form_widget(registrationForm.birthday) }}</div>
+                <div>{{ form_errors(registrationForm.birthday) }}</div>
             </div>
         </div>
         <div class="row col-8 bg-light rounded-3 shadow mx-auto my-2 px-3 border rounded-3 justify-content-center">
@@ -42,10 +48,12 @@
                 <div class="row mb-2 px-3 text-center">
                     <div class="col-12 p-1">{{ form_label(registrationForm.defaultAllergy) }}</div>
                     <div class="col-12 p-1">{{ form_widget(registrationForm.defaultAllergy) }}</div>
+                    <div>{{ form_errors(registrationForm.defaultAllergy) }}</div>
                 </div>
                 <div class="row mb-2 px-3 text-center">
                     <div class="col-12 p-1">{{ form_label(registrationForm.defaultNbPlaces) }}</div>
                     <div class="col-12 p-1">{{ form_widget(registrationForm.defaultNbPlaces) }}</div>
+                    <div>{{ form_errors(registrationForm.defaultNbPlaces) }}</div>
                 </div>
             </div>
         </div>

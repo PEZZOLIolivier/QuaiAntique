@@ -12,6 +12,8 @@ use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Form\Extension\Core\Type\DateTimeType;
 use Symfony\Component\Form\Extension\Core\Type\IntegerType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
+use Symfony\Component\Validator\Constraints\Length;
+use Symfony\Component\Validator\Constraints\Regex;
 
 class ReservationType extends AbstractType
 {
@@ -42,19 +44,35 @@ class ReservationType extends AbstractType
                 'attr' => [
                     'class' => 'reservation',
                 ],
-
+                'constraints' => [
+                    new Regex("[^&~#'{}!()_%$@<>]", "Vous ne pouvez pas utliser de caractères spéciaux"),
+                    new Length([
+                        'max' => 50,
+                        'maxMessage' => 'Vous ne pouvez pas utiliser plus de 50 caractères'
+                    ]),
+                ],
             ])
             ->add('nbPlaces', IntegerType::class,[
                 'required' => true,
                 'attr' => [
                     'class' => 'reservation',
                 ],
+                'constraints' => [
+                    new Regex("[^&~#'{}!()_%$@<>]", "Vous ne pouvez pas utliser de caractères spéciaux"),
+                ],
             ])
             ->add('allergy', TextType::class,[
                 'required' => false,
                 'attr' => [
                     'class' => 'reservation',
-                ]
+                ],
+                'constraints' => [
+                    new Regex("[^&~#'{}!()_%$@<>]", "Vous ne pouvez pas utliser de caractères spéciaux"),
+                    new Length([
+                        'max' => 100,
+                        'maxMessage' => 'Vous ne pouvez pas utiliser plus de 100 caractères'
+                    ]),
+                ],
             ])
         ;
     }

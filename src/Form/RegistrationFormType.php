@@ -14,7 +14,9 @@ use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Validator\Constraints\IsTrue;
+use Symfony\Component\Validator\Constraints\Length;
 use Symfony\Component\Validator\Constraints\NotBlank;
+use Symfony\Component\Validator\Constraints\Regex;
 
 class RegistrationFormType extends AbstractType
 {
@@ -26,6 +28,10 @@ class RegistrationFormType extends AbstractType
                 'constraints' => [
                     new NotBlank([
                         'message' => 'Merci de rentrer une addresse email valide.',
+                    ]),
+                    new Length([
+                        'max' => 50,
+                        'maxMessage' => 'Vous ne pouvez pas utiliser plus de 50 caractères'
                     ]),
                 ]
 
@@ -53,31 +59,56 @@ class RegistrationFormType extends AbstractType
                     'attr' => ['class' => 'col 3 my-1 mx-1'],
                 ],
                 'constraints' => [
-                    new NotBlank([
-                        'message' => 'Merci de mettre votre mot de passe',
-                    ]),
+                    new Regex("^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,}$^", "Il faut un mot de passe de minimum 8 caratères, avec 1 Majuscule, 1 Minuscule, 1 chiffre et 1 caractère spécial"),
                 ],
             ])
 
             ->add('defaultAllergy', TextType::class, [
                 'required' => false,
                 'label' => 'Allergies',
+                'constraints' => [
+                    new Regex("[^&~#'{}!()_%$@<>]", "Vous ne pouvez pas utliser de caractères spéciaux"),
+                ],
             ])
             ->add('defaultNbPlaces', IntegerType::class, [
                 'required' => false,
                 'label' => 'Nombre de place(s) par défaut',
+                'constraints' => [
+                    new Regex("[^&~#'{}!()_%$@<>]", "Vous ne pouvez pas utliser de caractères spéciaux"),
+                ],
             ])
             ->add('firstName', TextType::class, [
                 'required' => false,
                 'label' => 'Prénom',
+                'constraints' => [
+                    new Regex("[^&~#'{}!()_%$@<>]", "Vous ne pouvez pas utliser de caractères spéciaux"),
+                    new Length([
+                        'max' => 50,
+                        'maxMessage' => 'Vous ne pouvez pas utiliser plus de 50 caractères'
+                    ]),
+                ],
             ])
             ->add('lastName', TextType::class, [
                 'required' => true,
                 'label' => 'Nom de famille',
+                'constraints' => [
+                    new Regex("[^&~#'{}!()_%$@<>]", "Vous ne pouvez pas utliser de caractères spéciaux"),
+                    new Length([
+                        'max' => 50,
+                        'maxMessage' => 'Vous ne pouvez pas utiliser plus de 50 caractères'
+                    ]),
+                ],
             ])
             ->add('phoneNumber', TextType::class, [
                 'required' => false,
                 'label' => 'N° de téléphone',
+                'constraints' => [
+                    new Regex("[^&~#'{}!()_%$@<>]", "Vous ne pouvez pas utliser de caractères spéciaux"),
+                    new Length([
+                        'max' => 50,
+                        'maxMessage' => 'Vous ne pouvez pas utiliser plus de 50 caractères'
+                    ]),
+                ],
             ])
             ->add('birthday', DateType::class, [
                 'required' => false,
