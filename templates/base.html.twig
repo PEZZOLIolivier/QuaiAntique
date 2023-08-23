@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html class="h-100">
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -32,7 +32,6 @@
     </head>
     <body class="container-xl min-vh-100" id="page-container">
         {%  block header %} {%  include 'navigation/header.html.twig' %} {% endblock header %}
-        {% include "_toasts.html.twig" %}
         <main class="content bg-white shadow-sm mx-auto my-3 py-3 px-2 rounded-3 justify-content-center row" id="content">{% block body %}{% endblock %}</main>
 
         <div class="w-100">{{ render(path('app_hours')) }}</div>

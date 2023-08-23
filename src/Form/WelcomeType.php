@@ -26,7 +26,6 @@ class WelcomeType extends AbstractType
             ->add('lastName', TextType::class, [
                 'label' => "Nom de famille",
                 'constraints' => [
-                    new Regex("[^&~#'{}!()_%$@<>]", "Vous ne pouvez pas utliser de caractères spéciaux"),
                     new Length([
                         'max' => 50,
                         'maxMessage' => 'Vous ne pouvez pas utiliser plus de 50 caractères'

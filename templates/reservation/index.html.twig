@@ -21,7 +21,7 @@
         <div class="row text-center">
             <div class="m-1 mb-3 col-12">Places disponibles : <span id="slots"></span></div>
         </div>
-
+    {% include "_toasts.html.twig" %}
         <div class="row text-center">
             <b class="col-12 m-1">{{ form_label(reservationForm.lastName, 'Nom de famille') }}</b>
             <div class="col-12 m-1 mb-3">{{ form_widget(reservationForm.lastName, {'id': 'form-res-date-field'}) }}</div>
@@ -43,10 +43,10 @@
         </div>
     {% else %}
         <div class="text-center col m-3">
-            <a class="container-button col-4 btn btn-outline m-1 mb-3 hover" href=" {{ path('app_register') }} " role="button">S'enregistrer</a>
+            <a class="container-button col-10 col-lg-4 btn btn-outline m-1 mb-3 hover" href=" {{ path('app_register') }} " role="button">S'enregistrer</a>
         </div>
         <div class="text-center col m-3">
-            <a class="container-button col-4 btn btn-outline m-1 mb-3 hover" href=" {{ path('app_login') }} " role="button">Connexion</a>
+            <a class="container-button col-10 col-lg-4 btn btn-outline m-1 mb-3 hover" href=" {{ path('app_login') }} " role="button">Connexion</a>
         </div>
     {% endif %}
     {{ form_end(reservationForm) }}

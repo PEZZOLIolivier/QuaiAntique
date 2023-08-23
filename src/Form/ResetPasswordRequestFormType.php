@@ -20,7 +20,6 @@ class ResetPasswordRequestFormType extends AbstractType
                     new NotBlank([
                         'message' => 'Merci de rentrer votre mail',
                     ]),
-                    new Regex("[^&~#'{}!()_%$@<>]", "Vous ne pouvez pas utliser de caractères spéciaux"),
                 ],
             ])
         ;

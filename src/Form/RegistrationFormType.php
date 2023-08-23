@@ -67,21 +67,29 @@ class RegistrationFormType extends AbstractType
                 'required' => false,
                 'label' => 'Allergies',
                 'constraints' => [
-                    new Regex("[^&~#'{}!()_%$@<>]", "Vous ne pouvez pas utliser de caractères spéciaux"),
+                    new Regex('/[a-zA-Z]+$/', 'Vous ne pouvez utiliser que les lettres de A à Z en minuscule et majuscule'),
+                    new Length([
+                        'max' => 100,
+                        'maxMessage' => 'Vous ne pouvez pas utiliser plus de 100 caractères'
+                    ]),
                 ],
             ])
             ->add('defaultNbPlaces', IntegerType::class, [
                 'required' => false,
                 'label' => 'Nombre de place(s) par défaut',
                 'constraints' => [
-                    new Regex("[^&~#'{}!()_%$@<>]", "Vous ne pouvez pas utliser de caractères spéciaux"),
+                    new Regex('/[0-9]+$/', 'Vous ne pouvez utiliser que des chiffres'),
+                    new Length([
+                        'max' => 2,
+                        'maxMessage' => 'Vous ne pouvez pas utiliser plus de 2 caractères'
+                    ]),
                 ],
             ])
             ->add('firstName', TextType::class, [
                 'required' => false,
                 'label' => 'Prénom',
                 'constraints' => [
-                    new Regex("[^&~#'{}!()_%$@<>]", "Vous ne pouvez pas utliser de caractères spéciaux"),
+                    new Regex('/[a-zA-Z]+$/', 'Vous ne pouvez utiliser que les lettres de A à Z en minuscule et majuscule'),
                     new Length([
                         'max' => 50,
                         'maxMessage' => 'Vous ne pouvez pas utiliser plus de 50 caractères'
@@ -92,7 +100,7 @@ class RegistrationFormType extends AbstractType
                 'required' => true,
                 'label' => 'Nom de famille',
                 'constraints' => [
-                    new Regex("[^&~#'{}!()_%$@<>]", "Vous ne pouvez pas utliser de caractères spéciaux"),
+                    new Regex('/[a-zA-Z]+$/', 'Vous ne pouvez utiliser que les lettres de A à Z en minuscule et majuscule'),
                     new Length([
                         'max' => 50,
                         'maxMessage' => 'Vous ne pouvez pas utiliser plus de 50 caractères'
@@ -103,7 +111,7 @@ class RegistrationFormType extends AbstractType
                 'required' => false,
                 'label' => 'N° de téléphone',
                 'constraints' => [
-                    new Regex("[^&~#'{}!()_%$@<>]", "Vous ne pouvez pas utliser de caractères spéciaux"),
+                    new Regex('/[0-9]+$/', 'Vous ne pouvez utiliser que des chiffres'),
                     new Length([
                         'max' => 50,
                         'maxMessage' => 'Vous ne pouvez pas utiliser plus de 50 caractères'

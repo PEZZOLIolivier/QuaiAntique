@@ -24,7 +24,7 @@ class ReservationCrudController extends AbstractCrudController
             TextField::new('lastName', 'Nom de famille'),
             IntegerField::new('nbPlaces', 'Nombre de couverts'),
             TextField::new('allergy', 'Allergie(s)'),
-            DateTimeField::new('createdAt', 'créée le')->onlyOnIndex()
+            DateTimeField::new('createdAt', 'créée le')
         ];
     }
 

@@ -5,7 +5,6 @@
 {% block body %}
     <h1 class="text-center text-capitalize text-decoration-underline">Enregistrement</h1>
     {{ form_start(registrationForm) }}
-        <div class="bg-light rounded-3 shadow mx-auto mb-2 px-3 border rounded-3 justify-content-center">
             <div class="row col-8 bg-light rounded-3 shadow mx-auto my-2 px-3 border rounded-3 justify-content-center">
                 <h2 class="text-center my-2 px-3">Identifiants</h2>
                 <div class="row mb-2 px-3 text-center">
@@ -18,7 +17,7 @@
                     <div class="form-error">{{ form_errors(registrationForm.password) }}</div>
                 </div>
             </div>
-        </div>
+
         <div class="row col-8 bg-light rounded-3 shadow mx-auto mb-2 px-3 border rounded-3 justify-content-center">
             <h2 class="text-center mb-2 px-3">Identité</h2>
             <div class="row mb-2 px-3 text-center">
@@ -61,7 +60,7 @@
             <div class="text-center">{{ form_row(registrationForm.agreeTerms) }}</div>
         </div>
         <div class="row justify-content-center">
-            <button type="submit" class="container-button container-button col-6 btn btn-outline m-1 hover text-center">Register</button>
+            <button type="submit" class="container-button container-button col-6 btn btn-outline m-1 hover text-center">S'enregistrer</button>
         </div>
     {{ form_end(registrationForm) }}
 {% endblock %}
